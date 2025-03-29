@@ -1,7 +1,7 @@
 title: Artur Szalak
 description: Personal website and career portfolio
-baseurl: "/harimau"
-url: "https://harimau-airene.github.io"
+baseurl: ""
+url: "https://arturszalak.com"
 
 # Build settings
 markdown: kramdown
