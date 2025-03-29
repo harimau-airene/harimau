@@ -1,7 +1,7 @@
-title: Your Name
+title: Artur Szalak
 description: Personal website and career portfolio
-baseurl: ""
-url: ""
+baseurl: "/harimau"
+url: "https://harimau-airene.github.io"
 
 # Build settings
 markdown: kramdown
@@ -9,6 +9,9 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+sass:
+  style: compressed
 
 # Exclude from processing
 exclude:
