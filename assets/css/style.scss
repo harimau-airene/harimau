@@ -1,0 +1,89 @@
+@import "minima";
+
+:root {
+  --text-color: #333;
+  --link-color: #0066cc;
+  --background-color: #ffffff;
+  --header-color: #1a1a1a;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--header-color);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+
+.site-header {
+  border-top: none;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.post-content {
+  margin-top: 2rem;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.post-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.post-list {
+  margin-top: 2rem;
+}
+
+.post-list > li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.post-list > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+} 
