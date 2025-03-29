@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +8,52 @@
     <title>{{ site.title }}</title>
   </head>
   <body>
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="theme-toggle-text">☀️</span>
+    </button>
+    
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
     </main>
+
+    <script>
+      const themeToggle = document.querySelector('.theme-toggle');
+      const themeToggleText = document.querySelector('.theme-toggle-text');
+      const html = document.documentElement;
+      
+      // Check for saved theme preference, otherwise use system preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        html.dataset.theme = savedTheme;
+        updateToggleButton(savedTheme);
+      } else {
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        html.dataset.theme = systemTheme;
+        updateToggleButton(systemTheme);
+      }
+      
+      // Toggle theme
+      themeToggle.addEventListener('click', () => {
+        const newTheme = html.dataset.theme === 'light' ? 'dark' : 'light';
+        html.dataset.theme = newTheme;
+        localStorage.setItem('theme', newTheme);
+        updateToggleButton(newTheme);
+      });
+      
+      function updateToggleButton(theme) {
+        themeToggleText.textContent = theme === 'light' ? '☀️' : '🌙';
+      }
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+          const newTheme = e.matches ? 'dark' : 'light';
+          html.dataset.theme = newTheme;
+          updateToggleButton(newTheme);
+        }
+      });
+    </script>
   </body>
 </html> 
